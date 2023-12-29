@@ -1,13 +1,14 @@
 import sys
-from preprocessing import TranslationHandler
-from data import DataHandler
-from experiment import ExperimentRunner
+from experiment.data import data_handling
+from experiment.preprocessing import TranslationHandler
+from experiment.evaluation import Evaluator
+from experiment.visualization import Visualizer
 
 def experiment_pipeline():
 	pass
 	'''
-	query, docs = DataHandler.loadData()
-
+	documents, queries, qrels = data_handling.loadData()    
+	
 	preprocessed_data = TranslationHander.translate([it, de], query)
 
 	exRunner = ExperimentRunner(preprocessed_data, mode) # mode e.g distiluse
