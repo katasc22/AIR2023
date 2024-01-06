@@ -1,6 +1,6 @@
 from sentence_transformers import SentenceTransformer
 import numpy as np
-from data import data_handling
+from experiment.data import DataHandler
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 
@@ -41,5 +41,5 @@ def retrieve_k_documents(k, documents, queries):
     return result_df
 
 
-documents, queries, qrels = data_handling.loadData()     #TODO: remove (is already in air-experiment)
+documents, queries, qrels = DataHandler.loadAll()     #TODO: remove (is already in air-experiment)
 retrieve_k_documents(5, documents,queries)
