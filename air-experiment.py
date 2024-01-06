@@ -4,7 +4,6 @@ from experiment.preprocessing.Preprocessor import Preprocessor
 from experiment.preprocessing.TranslationHandler import TranslationHandler
 from experiment.evaluation import Evaluator
 from experiment.visualization import Visualizer
-import time
 
 POSSIBLE_LANGUAGES = ["de", "it", "fr"]
 
