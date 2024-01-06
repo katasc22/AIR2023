@@ -7,6 +7,7 @@ class ExperimentRunner:
 		self.preprocessed_data = preprocessed_data
 
 	def runExperiment(self):
+		print("[ExperimentRunner] Start experiment ...")
 		if self.experiment_approach == "all":
 			pass
 		elif self.experiment_approach == "translation-based":

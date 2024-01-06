@@ -53,11 +53,13 @@ class Preprocessor:
 
 	def translate_dataset_if_not_cached(self):
 		if not self.dataHandler.does_cached_translated_dataset_exist():
+			print("[Preprocessor] No cached files found starting translation of raw data ...")
 			translated_queries, translated_docs = self.translationHandler.translate_raw_data(self.queries, self.documents)
 			self.dataHandler.cache_translated_dataset_on_disk(translated_queries, translated_docs)
 
 
 	def preprocess(self):
+		print("[Preprocessor] Start preprocessing ...")
 		# set all text lowercase
 		self.lower_untranslated_text()
 
@@ -71,5 +73,7 @@ class Preprocessor:
 			self.lower_all_translations()
 
 			preprocessed_data = self.prepare_translated_data()
+
+		print("[Preprocessor] Finished preprocessing.")
 		
 		return preprocessed_data

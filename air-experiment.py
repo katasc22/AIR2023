@@ -16,7 +16,7 @@ def experiment_pipeline(experiment_mode: str, experiment_approach: str, translat
 	preprocessor = Preprocessor(experiment_mode, dataHandler, translationHandler, translation_target, translation_langs)
 	preprocessed_data = preprocessor.preprocess()
 	
-	experimentRunner = ExperimentRunner(experiment_approach, preprocessed_data)
+	experimentRunner = ExperimentRunner(experiment_approach, experiment_mode, preprocessed_data)
 	experimentRunner.runExperiment()
 
 	qrels = dataHandler.get_qrels()
