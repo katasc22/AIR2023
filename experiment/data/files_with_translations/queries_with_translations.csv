@@ -1,0 +1,195 @@
+query_id,text,text_de,text_it,text_fr
+1,"measurement of dielectric constant of liquids by the use of microwave techniques
+",Messung der Dielektrizitätskonstante von Flüssigkeiten mittels Mikrowellentechnik,misura della costante dielettrica di liquidi mediante l'utilizzo di tecniche a microonde,mesure de la constante diélectrique de liquides par utilisation de techniques micro-ondes
+2,"mathematical analysis and design details of waveguide fed microwave radiations
+",mathematische Analyse und Designdetails von wellenleitergespeisten Mikrowellenstrahlungen,analisi matematica e dettagli di progettazione delle radiazioni a microonde alimentate in guida d'onda,analyse mathématique et détails de conception des rayonnements micro-ondes alimentés par un guide d'ondes
+3,"use of digital computers in the design of band pass filters having given phase and attenuation characteristics
+",Verwendung digitaler Computer beim Entwurf von Bandpassfiltern mit vorgegebenen Phasen- und Dämpfungseigenschaften,utilizzo di calcolatori digitali nella progettazione di filtri passa banda aventi determinate caratteristiche di fase e di attenuazione,utilisation d'ordinateurs numériques dans la conception de filtres passe-bande ayant des caractéristiques de phase et d'atténuation données
+4,"systems of data coding for information transfer
+",Systeme der Datenkodierung zur Informationsübertragung,sistemi di codifica dei dati per il trasferimento delle informazioni,systèmes de codage de données pour le transfert d'informations
+5,"use of programs in engineering testing of computers
+",Verwendung von Programmen beim technischen Testen von Computern,uso di programmi nei test ingegneristici dei computer,utilisation de programmes pour les tests techniques d'ordinateurs
+6,"number representation in binary machines
+",Zahlendarstellung in binären Maschinen,Rappresentazione dei numeri nelle macchine binarie,représentation des nombres dans les machines binaires
+7,"secondary emission of electrons by positive ion bombardment of the cathode
+",Sekundäre Emission von Elektronen durch positiven Ionenbeschuss der Kathode,emissione secondaria di elettroni mediante bombardamento di ioni positivi sul catodo,émission secondaire d'électrons par bombardement ionique positif de la cathode
+8,"measurement of plasma temperatures in arc discharge using shock wave techniques
+",Messung der Plasmatemperaturen bei Lichtbogenentladungen mittels Stoßwellentechnik,misurazione della temperatura del plasma nella scarica ad arco mediante tecniche di onde d'urto,mesure des températures du plasma lors d'une décharge d'arc à l'aide de techniques d'ondes de choc
+9,"characteristics of the single electrode discharge in the rare gases at low pressures
+",Eigenschaften der Einzelelektrodenentladung in Edelgasen bei niedrigen Drücken,caratteristiche della scarica monoelettrodica nei gas rari a basse pressioni,caractéristiques de la décharge d'une seule électrode dans les gaz rares à basse pression
+10,"methods of calculating instantaneous power dissipation in reactive circuits
+",Methoden zur Berechnung der momentanen Verlustleistung in Blindstromkreisen,metodi di calcolo della dissipazione di potenza istantanea nei circuiti reattivi,procédés de calcul de la dissipation de puissance instantanée dans des circuits réactifs
+11,"the effect of oxidation on circuit breaker contacts
+",die Auswirkung der Oxidation auf die Kontakte des Leistungsschalters,l'effetto dell'ossidazione sui contatti dell'interruttore,l'effet de l'oxydation sur les contacts du disjoncteur
+12,"temperature independent methods for tuning highly stable high frequency oscillators
+",temperaturunabhängige Methoden zur Abstimmung hochstabiler Hochfrequenzoszillatoren,metodi indipendenti dalla temperatura per la sintonizzazione di oscillatori ad alta frequenza altamente stabili,méthodes indépendantes de la température pour régler des oscillateurs haute fréquence hautement stables
+13,"mathematical expressions and graphs for the design of transistorised tuned pass band amplifiers
+",Mathematische Ausdrücke und Diagramme für den Entwurf von Transistorverstärkern mit abgestimmtem Durchlassband,espressioni matematiche e grafici per la progettazione di amplificatori passa banda sintonizzati transistorizzati,expressions mathématiques et graphiques pour la conception d'amplificateurs passe-bande accordés transistorisés
+14,"synthesis of filters having high attenuation characteristics using a block diagram approach
+",Synthese von Filtern mit hohen Dämpfungseigenschaften unter Verwendung eines Blockdiagrammansatzes,sintesi di filtri aventi elevate caratteristiche di attenuazione utilizzando un approccio con diagramma a blocchi,synthèse de filtres présentant des caractéristiques d'atténuation élevées à l'aide d'une approche par schéma fonctionnel
+15,"voltage current relationships in networks of nonlinear elements connected in parallel
+",Spannungs-Strom-Beziehungen in Netzwerken parallel geschalteter nichtlinearer Elemente,relazioni tensione-corrente in reti di elementi non lineari collegati in parallelo,relations tension-courant dans des réseaux d'éléments non linéaires connectés en parallèle
+16,"methods of approximating the frequency phase relationships for resistive inductive and resistive capacitive circuits
+",Methoden zur Annäherung der Frequenzphasenbeziehungen für ohmsche induktive und ohmsche kapazitive Schaltkreise,metodi per approssimare le relazioni di fase in frequenza per circuiti resistivi induttivi e resistivi capacitivi,procédés d'approximation des relations fréquence-phase pour des circuits résistifs inductifs et résistifs capacitifs
+17,"observations of rapid fluctuations in the earths magnetic field and their relation to the propagation of hydromagnetic waves in the
+exosphere
+","Beobachtungen schneller Schwankungen im Erdmagnetfeld und deren Zusammenhang mit der Ausbreitung hydromagnetischer Wellen in der Erde
+Exosphäre","osservazioni di rapide fluttuazioni nel campo magnetico terrestre e la loro relazione con la propagazione delle onde idromagnetiche nel
+esosfera","observations de fluctuations rapides du champ magnétique terrestre et de leur relation avec la propagation des ondes hydromagnétiques dans le
+exosphère"
+18,"diurnal variations of fluctuations in the earths magnetic field
+",Tagesschwankungen der Schwankungen des Erdmagnetfeldes,variazioni diurne delle fluttuazioni del campo magnetico terrestre,variations diurnes des fluctuations du champ magnétique terrestre
+19,"spherical harmonic analysis of the earths magnetic field
+",sphärische harmonische Analyse des Erdmagnetfeldes,analisi armonica sferica del campo magnetico terrestre,analyse harmonique sphérique du champ magnétique terrestre
+20,"derivation of the components of the electrical conductivity in the upper atmosphere
+",Ableitung der Komponenten der elektrischen Leitfähigkeit in der oberen Atmosphäre,derivazione dei componenti della conducibilità elettrica nell'alta atmosfera,dérivation des composantes de la conductivité électrique dans la haute atmosphère
+21,"the effects of solar flares on the absorption of cosmic radio noise in the ionosphere
+",die Auswirkungen von Sonneneruptionen auf die Absorption von kosmischem Radiorauschen in der Ionosphäre,gli effetti dei brillamenti solari sull'assorbimento del rumore radio cosmico nella ionosfera,les effets des éruptions solaires sur l'absorption du bruit radio cosmique dans l'ionosphère
+22,"determination of the current systems in the upper atmosphere during magnetic storms
+",Bestimmung der Strömungssysteme in der oberen Atmosphäre bei magnetischen Stürmen,determinazione dei sistemi di corrente nell'alta atmosfera durante le tempeste magnetiche,détermination des systèmes de courants dans la haute atmosphère lors des orages magnétiques
+23,"observations of the sun during eclipses giving the distribution of sources on the disc in the microwave range
+","Beobachtungen der Sonne während Finsternissen, die die Verteilung der Quellen auf der Scheibe im Mikrowellenbereich liefern",osservazioni del sole durante le eclissi che danno la distribuzione delle sorgenti sul disco nella gamma delle microonde,observations du soleil lors des éclipses donnant la répartition des sources sur le disque dans le domaine des micro-ondes
+24,"observations of the sun using radio interferometers
+",Beobachtungen der Sonne mit Radiointerferometern,osservazioni del sole mediante radiointerferometri,observations du soleil à l'aide d'interféromètres radio
+25,"equations governing the propagation of electromagnetic and hydromagnetic waves in the solar corona
+","Gleichungen, die die Ausbreitung elektromagnetischer und hydromagnetischer Wellen in der Sonnenkorona regeln",equazioni che governano la propagazione delle onde elettromagnetiche e idromagnetiche nella corona solare,équations régissant la propagation des ondes électromagnétiques et hydromagnétiques dans la couronne solaire
+26,"estimates of the density of ionization and temperature in the solar corona
+",Schätzungen der Ionisationsdichte und der Temperatur in der Sonnenkorona,stime della densità di ionizzazione e della temperatura nella corona solare,estimations de la densité d'ionisation et de la température dans la couronne solaire
+27,"please send abstracts on the source spectra of lightning discharges
+",Bitte senden Sie Abstracts zu den Quellspektren von Blitzentladungen,si prega di inviare abstract sugli spettri sorgente delle scariche di fulmini,veuillez envoyer des résumés sur les spectres sources des décharges de foudre
+28,"the effect of small distortions in the surface of a cavity resonator
+",der Effekt kleiner Verzerrungen in der Oberfläche eines Hohlraumresonators,l'effetto di piccole distorsioni nella superficie di un risonatore a cavità,l'effet de petites distorsions dans la surface d'un résonateur à cavité
+29,"the determination of the orbits of individual meteors by radio methods
+",die Bestimmung der Umlaufbahnen einzelner Meteore durch Funkmethoden,la determinazione delle orbite delle singole meteore mediante metodi radio,la détermination des orbites de météores individuels par des méthodes radio
+30,"the determination of ion masses in the ionosphere by the study of back scattered radio waves
+",die Bestimmung von Ionenmassen in der Ionosphäre durch die Untersuchung rückgestreuter Radiowellen,la determinazione delle masse ioniche nella ionosfera mediante lo studio delle onde radio retrodiffuse,la détermination des masses ioniques dans l'ionosphère par l'étude des ondes radio rétrodiffusées
+31,"theoretical studies of the source of high frequency radio waves emitted from the planet jupiter
+","Theoretische Studien zur Quelle hochfrequenter Radiowellen, die vom Planeten Jupiter ausgesendet werden",studi teorici sulla sorgente delle onde radio ad alta frequenza emesse dal pianeta Giove,études théoriques de la source des ondes radio haute fréquence émises par la planète Jupiter
+32,"simultaneous observations of whistlers and lightning discharges
+",gleichzeitige Beobachtung von Pfeifern und Blitzentladungen,osservazioni simultanee di fischi e scariche di fulmini,observations simultanées de siffleurs et de décharges de foudre
+33,"variations in the height of reflection of low or very low frequency radio waves in the period before ground sunrise
+",Schwankungen in der Reflexionshöhe von Radiowellen mit niedriger oder sehr niedriger Frequenz in der Zeit vor Sonnenaufgang am Boden,variazioni nell'altezza di riflessione delle onde radio a bassa o bassissima frequenza nel periodo precedente l'alba al suolo,variations de la hauteur de réflexion des ondes radio basse ou très basse fréquence avant le lever du soleil au sol
+34,"the use of ionospheric cross modulation in the determination of ionospheric electron densities and collision frequencies
+",die Verwendung der ionosphärischen Kreuzmodulation bei der Bestimmung der ionosphärischen Elektronendichten und Kollisionsfrequenzen,l'uso della modulazione incrociata ionosferica nella determinazione delle densità elettroniche ionosferiche e delle frequenze di collisione,utilisation de la modulation croisée ionosphérique dans la détermination des densités électroniques ionosphériques et des fréquences de collision
+35,"measurements of ionospheric drifts near the equator
+",Messungen ionosphärischer Drifts in der Nähe des Äquators,misure di derive ionosferiche in prossimità dell'equatore,mesures des dérives ionosphériques près de l'équateur
+36,"the use of analogue computers in upper atmosphere theory
+",die Verwendung analoger Computer in der Theorie der oberen Atmosphäre,l'uso di computer analogici nella teoria dell'alta atmosfera,l'utilisation d'ordinateurs analogiques dans la théorie de la haute atmosphère
+37,"the use of lunar radio reflections in investigations of the nature of the moons surface
+",die Verwendung von Mondradioreflexionen zur Untersuchung der Beschaffenheit der Mondoberfläche,l'uso delle riflessioni radio lunari nelle indagini sulla natura della superficie lunare,l'utilisation des réflexions radio lunaires dans les recherches sur la nature de la surface des lunes
+38,"what references on comparison between ground level and high altitude balloon cosmic ray results
+",Welche Referenzen zum Vergleich zwischen bodennahen und hochgelegenen Ballonergebnissen der kosmischen Strahlung gibt es?,quali riferimenti sul confronto tra i risultati dei raggi cosmici del pallone a livello del suolo e quelli ad alta quota,quelles références sur la comparaison entre les résultats des rayons cosmiques au niveau du sol et ceux des ballons à haute altitude
+39,"what references on model experiments in aurora
+",welche Hinweise auf Modellexperimente in Aurora,quali riferimenti sugli esperimenti modello nell'aurora,quelles références sur les expériences modèles dans les aurores boréales
+40,"what references on integral spectrum of primary cosmic rays
+",Welche Hinweise auf das Integralspektrum der primären kosmischen Strahlung?,quali riferimenti sullo spettro integrale dei raggi cosmici primari,quelles références sur le spectre intégral des rayons cosmiques primaires
+41,"ferromagnetic techniques for computer stores
+",ferromagnetische Techniken für Computergeschäfte,tecniche ferromagnetiche per negozi di informatica,techniques ferromagnétiques pour les magasins d'informatique
+42,"solution of differential equations by computer
+",Lösung von Differentialgleichungen am Computer,Soluzione di equazioni differenziali tramite computer,solution d'équations différentielles par ordinateur
+43,"efficiency of digital computers versus analogue computers in the solution of boundary value problems
+",Effizienz digitaler Rechner im Vergleich zu analogen Rechnern bei der Lösung von Randwertproblemen,efficienza dei computer digitali rispetto ai computer analogici nella soluzione di problemi ai limiti,efficacité des ordinateurs numériques par rapport aux ordinateurs analogiques dans la résolution des problèmes de valeurs limites
+44,"methods of error checking in digital computers
+",Methoden zur Fehlerprüfung in digitalen Computern,metodi di controllo degli errori nei computer digitali,méthodes de vérification des erreurs dans les ordinateurs numériques
+45,"methods of producing minimal nets given a logical function in canonical form
+",Methoden zur Erzeugung minimaler Netze mit einer logischen Funktion in kanonischer Form,metodi per produrre reti minime data una funzione logica in forma canonica,méthodes de production de réseaux minimaux dotés d'une fonction logique sous forme canonique
+46,"arithmetic units as required in a digital computer including shift registers serial and parallel adder
+","Recheneinheiten, wie sie in einem Digitalrechner benötigt werden, einschließlich Schieberegister, serieller und paralleler Addierer","unità aritmetiche richieste in un computer digitale, compresi i registri a scorrimento sommatori seriali e paralleli","unités arithmétiques requises dans un ordinateur numérique comprenant des registres à décalage, un additionneur série et parallèle"
+47,"information on the design of low drift transistor amplifiers
+",Informationen zum Design von Transistorverstärkern mit geringer Drift,informazioni sulla progettazione di amplificatori a transistor a bassa deriva,informations sur la conception des amplificateurs à transistors à faible dérive
+48,"information on high current transistor switches
+",Informationen zu Hochstrom-Transistorschaltern,informazioni sugli interruttori a transistor ad alta corrente,informations sur les commutateurs à transistors à courant élevé
+49,"information on design of time division multiplexing circuits
+",Informationen zum Design von Zeitmultiplexschaltungen,informazioni sulla progettazione di circuiti di multiplazione a divisione di tempo,informations sur la conception des circuits de multiplexage temporel
+50,"details of available low voltage capacitors
+",Einzelheiten zu den verfügbaren Niederspannungskondensatoren,dettagli sui condensatori a bassa tensione disponibili,détails des condensateurs basse tension disponibles
+51,"design of direct coupled flip flops to function with the maximum variations in the values of the circuit components
+","Entwurf direkt gekoppelter Flip-Flops, um mit den maximalen Schwankungen der Werte der Schaltungskomponenten zu funktionieren",progettazione di flip flop ad accoppiamento diretto per funzionare con le massime variazioni nei valori dei componenti circuitali,conception de bascules à couplage direct pour fonctionner avec les variations maximales des valeurs des composants du circuit
+52,"please supply information on the performance of typical magnetic film memory systems with circuit diagrams
+",Bitte geben Sie Informationen zur Leistung typischer Magnetfilmspeichersysteme mit Schaltplänen an,si prega di fornire informazioni sulle prestazioni dei tipici sistemi di memoria a pellicola magnetica con schemi elettrici,veuillez fournir des informations sur les performances des systèmes de mémoire à film magnétique typiques avec des schémas de circuit
+53,"i would like details of the work which has been done to extend the frequency range of magnetic amplifiers
+","Ich hätte gerne Einzelheiten zu den Arbeiten, die zur Erweiterung des Frequenzbereichs von Magnetverstärkern durchgeführt wurden",Vorrei i dettagli del lavoro svolto per estendere la gamma di frequenze degli amplificatori magnetici,je voudrais des détails sur les travaux qui ont été réalisés pour étendre la gamme de fréquences des amplificateurs magnétiques
+54,"i would like information on the range of static relays suitable for use at high switching rates
+","Ich hätte gerne Informationen über die Auswahl an statischen Relais, die für den Einsatz bei hohen Schaltfrequenzen geeignet sind",Vorrei informazioni sulla gamma di relè statici adatti all'utilizzo con velocità di commutazione elevate,je souhaite obtenir des informations sur la gamme de relais statiques adaptés à une utilisation à des vitesses de commutation élevées
+55,"i am interested in circuitry capable of generating extremely narrow pulses
+","Ich interessiere mich für Schaltungen, die extrem schmale Impulse erzeugen können",Sono interessato a circuiti in grado di generare impulsi estremamente stretti,je suis intéressé par des circuits capables de générer des impulsions extrêmement étroites
+56,"please supply information on the theory and use of parametric amplifiers
+",Bitte geben Sie Informationen zur Theorie und Verwendung parametrischer Verstärker,si prega di fornire informazioni sulla teoria e l'utilizzo degli amplificatori parametrici,veuillez fournir des informations sur la théorie et l'utilisation des amplificateurs paramétriques
+57,"the synthesis of networks with given sampled data transfer functions
+",die Synthese von Netzwerken mit vorgegebenen abgetasteten Datenübertragungsfunktionen,la sintesi di reti con determinate funzioni di trasferimento dati campionati,la synthèse de réseaux avec des fonctions de transfert de données échantillonnées données
+58,"the theory of stability in relation to control systems with relay elements
+",Die Theorie der Stabilität in Bezug auf Steuerungssysteme mit Relaiselementen,la teoria della stabilità in relazione ai sistemi di controllo con elementi a relè,la théorie de la stabilité en relation avec les systèmes de contrôle avec éléments de relais
+59,"the use of digital computers to obtain power spectral analysis of numerical data
+",der Einsatz digitaler Computer zur Leistungsspektralanalyse numerischer Daten,l'uso di computer digitali per ottenere analisi spettrali di potenza di dati numerici,l'utilisation d'ordinateurs numériques pour obtenir une analyse spectrale de puissance de données numériques
+60,"printed circuit design for a random pulse generator of low frequency
+",Entwurf einer gedruckten Schaltung für einen Zufallsimpulsgenerator mit niedriger Frequenz,progettazione di un circuito stampato per un generatore di impulsi casuali a bassa frequenza,conception de circuit imprimé pour un générateur d'impulsions aléatoires de basse fréquence
+61,"references on electric field theories of the aurora
+",Referenzen zu elektrischen Feldtheorien der Aurora,riferimenti sulle teorie del campo elettrico dell'aurora,références sur les théories des champs électriques des aurores boréales
+62,"fast transistor counters
+",schnelle Transistorzähler,contatori a transistor veloci,compteurs à transistors rapides
+63,"low pass lattice filters
+",Tiefpass-Gitterfilter,filtri reticolari passa basso,filtres passe-bas en treillis
+64,"similarities between the diffraction theory of electromagnetic waves and that of electron streams
+",Ähnlichkeiten zwischen der Beugungstheorie elektromagnetischer Wellen und der Elektronenströme,somiglianze tra la teoria della diffrazione delle onde elettromagnetiche e quella dei flussi di elettroni,similitudes entre la théorie de la diffraction des ondes électromagnétiques et celle des flux d'électrons
+65,"the use of complex variables in the theory of communication networks
+",die Verwendung komplexer Variablen in der Theorie von Kommunikationsnetzwerken,l'uso delle variabili complesse nella teoria delle reti di comunicazione,l'utilisation de variables complexes dans la théorie des réseaux de communication
+66,"the behaviour of a beam of charged particles in the presence of plane conductors
+",das Verhalten eines Strahls geladener Teilchen in Gegenwart ebener Leiter,il comportamento di un fascio di particelle cariche in presenza di conduttori piani,le comportement d'un faisceau de particules chargées en présence de conducteurs plans
+67,"predicting the paths of electrons moving in a varying magnetic field
+","Vorhersage der Bahnen von Elektronen, die sich in einem variierenden Magnetfeld bewegen",prevedere i percorsi degli elettroni che si muovono in un campo magnetico variabile,prédire les trajectoires des électrons se déplaçant dans un champ magnétique variable
+68,"active constant voltage transformer for signal distribution
+",Aktiver Konstantspannungstransformator zur Signalverteilung,trasformatore attivo a tensione costante per la distribuzione del segnale,transformateur actif à tension constante pour la distribution du signal
+69,"active audio frequency filter with variable cut off slope
+",Aktiver Audiofrequenzfilter mit variabler Grenzsteilheit,filtro attivo per la frequenza audio con pendenza di taglio variabile,filtre actif de fréquence audio avec pente de coupure variable
+70,"variable ultra high frequency attenuators
+",Variable Ultrahochfrequenz-Dämpfer,attenuatori variabili ad altissima frequenza,atténuateurs variables à ultra haute fréquence
+71,"faulty operation of feedback time bases
+",fehlerhafter Betrieb der Feedback-Zeitbasen,funzionamento difettoso delle basi tempi di feedback,mauvais fonctionnement des bases de temps de feedback
+72,"variable capacitance amplifiers
+",Verstärker mit variabler Kapazität,amplificatori a capacità variabile,amplificateurs à capacité variable
+73,"transistor sweep generators
+",Transistor-Sweep-Generatoren,generatori di spazzata a transistor,générateurs de balayage à transistors
+74,"advantages of parametric amplifiers
+",Vorteile parametrischer Verstärker,vantaggi degli amplificatori parametrici,avantages des amplificateurs paramétriques
+75,"optimising linear networks
+",Optimierung linearer Netzwerke,ottimizzazione delle reti lineari,optimisation des réseaux linéaires
+76,"transistor phase splitting circuits
+",Transistor-Phasenteilungsschaltungen,Circuiti a divisione di fase di transistor,circuits de séparation de phase à transistor
+77,"please supply information pertinent to the use of surface pretreatment to prevent secondary emission effects in valves
+",Bitte machen Sie Angaben zum Einsatz einer Oberflächenvorbehandlung zur Vermeidung sekundärer Emissionseffekte in Ventilen,si prega di fornire informazioni relative all'uso del pretrattamento superficiale per prevenire effetti di emissioni secondarie nelle valvole,veuillez fournir des informations pertinentes sur l'utilisation du prétraitement de surface pour éviter les effets d'émission secondaires dans les vannes
+78,"i wish to have data about the design of mechanical band pass filters for good pass characteristics
+",Ich möchte Daten über das Design mechanischer Bandpassfilter für gute Passeigenschaften haben,Desidero avere dati sulla progettazione di filtri passa banda meccanici per buone caratteristiche di passaggio,je souhaite avoir des données sur la conception de filtres passe-bande mécaniques pour de bonnes caractéristiques de passage
+79,"mechanisms whereby transmission at high frequencies is affected by weather and time of day
+","Mechanismen, bei denen die Übertragung bei hohen Frequenzen vom Wetter und der Tageszeit beeinflusst wird",meccanismi mediante i quali la trasmissione ad alte frequenze è influenzata dalle condizioni meteorologiche e dall'ora del giorno,mécanismes par lesquels la transmission à hautes fréquences est affectée par les conditions météorologiques et l'heure de la journée
+80,"could you please give me articles about the possibilities of getting rectification using metallic devices
+",Könnten Sie mir bitte Artikel über die Möglichkeiten der Korrektur mit metallischen Geräten geben?,potreste per favore darmi articoli sulle possibilità di ottenere la rettifica utilizzando dispositivi metallici,pourriez-vous s'il vous plaît me donner des articles sur les possibilités d'obtenir une rectification à l'aide d'appareils métalliques
+81,"i wish to calculate the inductance and loss in coils made using printed circuit or other miniaturization ideas. a suitable article
+please
+","Ich möchte die Induktivität und den Verlust in Spulen berechnen, die mit gedruckten Schaltkreisen oder anderen Miniaturisierungsideen hergestellt wurden. ein passender Artikel
+Bitte","desidero calcolare l'induttanza e la perdita nelle bobine realizzate utilizzando circuiti stampati o altre idee di miniaturizzazione. un articolo adatto
+Per favore","je souhaite calculer l'inductance et la perte dans les bobines réalisées à l'aide de circuits imprimés ou d'autres idées de miniaturisation. un article adapté
+s'il te plaît"
+82,"analysis of nonlinear systems using phase plane techniques
+",Analyse nichtlinearer Systeme mithilfe von Phasenebenentechniken,analisi di sistemi non lineari mediante tecniche del piano di fase,analyse de systèmes non linéaires à l'aide de techniques de plan de phase
+83,"miniature low noise high gain high impedance amplifiers
+",Rauscharme Miniaturverstärker mit hoher Verstärkung und hoher Impedanz,amplificatori miniaturizzati a basso rumore e alto guadagno ad alta impedenza,amplificateurs miniatures à faible bruit et à haute impédance à gain élevé
+84,"control characteristics of sampling servo systems
+",Steuereigenschaften von Sampling-Servosystemen,caratteristiche di controllo dei servosistemi di campionamento,caractéristiques de contrôle des systèmes d'asservissement d'échantillonnage
+85,"power spectral density distribution obtained using analogue techniques
+","Leistungsspektraldichteverteilung, die mit analogen Techniken ermittelt wurde",distribuzione della densità spettrale di potenza ottenuta mediante tecniche analogiche,distribution de densité spectrale de puissance obtenue à l'aide de techniques analogiques
+86,"high stability high input impedance transistorised analogue amplifier
+",Transistorisierter Analogverstärker mit hoher Stabilität und hoher Eingangsimpedanz,Amplificatore analogico transistorizzato ad alta stabilità e alta impedenza di ingresso,amplificateur analogique transistorisé à haute impédance d'entrée et haute stabilité
+87,"electronic specific heat of a superconductor showing a discontinuity at the superconducting critical temperature
+","elektronische spezifische Wärme eines Supraleiters, der bei der kritischen Temperatur des Supraleiters eine Diskontinuität aufweist",calore specifico elettronico di un superconduttore che mostra una discontinuità alla temperatura critica del superconduttore,chaleur spécifique électronique d'un supraconducteur montrant une discontinuité à la température critique du supraconducteur
+88,"an abstract on the field distribution surrounding a charged thin circular disc resting on an infinite dielectric slab
+","eine Zusammenfassung der Feldverteilung um eine geladene dünne kreisförmige Scheibe, die auf einer unendlichen dielektrischen Platte ruht",un abstract sulla distribuzione del campo che circonda un disco circolare sottile carico poggiante su una lastra dielettrica infinita,un résumé sur la distribution du champ entourant un mince disque circulaire chargé reposant sur une dalle diélectrique infinie
+89,"tunnel diode construction and its electrical characteristics explained
+",Tunneldiodenkonstruktion und ihre elektrischen Eigenschaften erklärt,spiegazione della costruzione del diodo tunnel e delle sue caratteristiche elettriche,construction de la diode tunnel et ses caractéristiques électriques expliquées
+90,"electronic density of states at the surface of a semiconductor compared with that at depth
+",elektronische Zustandsdichte an der Oberfläche eines Halbleiters im Vergleich zu der in der Tiefe,densità elettronica degli stati sulla superficie di un semiconduttore rispetto a quella in profondità,densité électronique d'états à la surface d'un semi-conducteur comparée à celle en profondeur
+91,"resistivity of metallic thin films related to surface roughness
+",spezifischer Widerstand metallischer Dünnfilme im Zusammenhang mit der Oberflächenrauheit,resistività dei film sottili metallici in relazione alla rugosità superficiale,résistivité des films minces métalliques liée à la rugosité de la surface
+92,"the phenomenon of radiation caused by charged particles moving in varying electric and magnetic fields
+","das Phänomen der Strahlung, die durch geladene Teilchen verursacht wird, die sich in unterschiedlichen elektrischen und magnetischen Feldern bewegen",il fenomeno della radiazione causata da particelle cariche che si muovono in campi elettrici e magnetici variabili,le phénomène de rayonnement provoqué par des particules chargées se déplaçant dans des champs électriques et magnétiques variables
+93,"high frequency oscillators using transistors theoretical treatment and practical circuit details
+","Hochfrequenzoszillatoren unter Verwendung von Transistoren, theoretische Behandlung und praktische Schaltungsdetails",oscillatori ad alta frequenza che utilizzano la trattazione teorica dei transistor e dettagli pratici del circuito,"oscillateurs haute fréquence utilisant des transistors, traitement théorique et détails pratiques du circuit"
