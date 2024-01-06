@@ -28,12 +28,12 @@ class Preprocessor:
 		seed(22) #TODO: Add parameter for seed
 		possible_columns = self.get_possible_text_columns()
 		if self.target == "docs":
-			preprocessed_queries = self.queries[["query_id", "text"]]
-			preprocessed_docs = self.docs[["doc_id"]]
+			preprocessed_queries = self.queries[["query_id", "text"]].copy()
+			preprocessed_docs = self.docs[["doc_id"]].copy()
 			preprocessed_docs["text"] = self.docs.apply(lambda row: row[choice(possible_columns)], axis=1)
 		elif self.target == "queries":
-			preprocessed_docs = self.docs[["doc_id", "text"]]
-			preprocessed_queries = self.queries[["query_id"]]
+			preprocessed_docs = self.docs[["doc_id", "text"]].copy()
+			preprocessed_queries = self.queries[["query_id"]].copy()
 			preprocessed_queries["text"] = self.queries.apply(lambda row: row[choice(possible_columns)], axis=1)
 
 		return PreprocessedData(preprocessed_queries, preprocessed_docs)
@@ -55,6 +55,7 @@ class Preprocessor:
 		if not self.dataHandler.does_cached_translated_dataset_exist():
 			translated_queries, translated_docs = self.translationHandler.translate_raw_data(self.queries, self.documents)
 			self.dataHandler.cache_translated_dataset_on_disk(translated_queries, translated_docs)
+
 
 	def preprocess(self):
 		# set all text lowercase

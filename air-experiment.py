@@ -2,12 +2,13 @@ from experiment.utils import utils
 from experiment.data.DataHandler import DataHandler
 from experiment.preprocessing.Preprocessor import Preprocessor
 from experiment.preprocessing.TranslationHandler import TranslationHandler
+from experiment.ExperimentRunner import ExperimentRunner
 # from experiment.evaluation import Evaluator
 # from experiment.visualization import Visualizer
 
 POSSIBLE_LANGUAGES = ["de", "it", "fr"] #TODO: Add it to some type of config
 
-def experiment_pipeline(experiment_mode: str, translation_target: str, translation_langs: list[str], translation_mode: str):
+def experiment_pipeline(experiment_mode: str, experiment_approach: str, translation_target: str, translation_langs: list[str], translation_mode: str):
 	print("[Main] Starting experiment ...")
 	dataHandler = DataHandler()
 	translationHandler = TranslationHandler(translation_mode, POSSIBLE_LANGUAGES)
@@ -15,7 +16,8 @@ def experiment_pipeline(experiment_mode: str, translation_target: str, translati
 	preprocessor = Preprocessor(experiment_mode, dataHandler, translationHandler, translation_target, translation_langs)
 	preprocessed_data = preprocessor.preprocess()
 	
-	print(preprocessed_data.docs)
+	experimentRunner = ExperimentRunner(experiment_approach, preprocessed_data)
+	experimentRunner.runExperiment()
 
 	qrels = dataHandler.get_qrels()
 	'''
@@ -34,7 +36,8 @@ def experiment_pipeline(experiment_mode: str, translation_target: str, translati
 
 def run():
 	args = utils.parse_arguments()
-	experiment_pipeline(args.experiment_mode[0], args.translation_target[0], args.translation_languages, args.translation_mode[0])
+	experiment_pipeline(args.experiment_mode[0], args.experiment_approach[0], args.translation_target[0], 
+					 args.translation_languages, args.translation_mode[0])
 
 if __name__ == "__main__":
 	run()
