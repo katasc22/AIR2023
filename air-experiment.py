@@ -1,13 +1,29 @@
-import sys
-from experiment.data import data_handling
-from experiment.preprocessing import TranslationHandler
+from experiment.utils import utils
+from experiment.data.DataHandler import DataHandler
+from experiment.preprocessing.Preprocessor import Preprocessor
+from experiment.preprocessing.TranslationHandler import TranslationHandler
 from experiment.evaluation import Evaluator
 from experiment.visualization import Visualizer
+import time
 
-def experiment_pipeline():
-	pass
+POSSIBLE_LANGUAGES = ["de", "it", "fr"]
+
+def experiment_pipeline(translation_target: str, translation_langs: list[str]):
+	dataHandler = DataHandler()
+	documents, queries = dataHandler.get_raw_queries_and_docs()
+	qrels = dataHandler.get_qrels()
+
+	# pretranslate dataset into all possible languages and cache on disk if translated dataset does not exist yet
+	if not dataHandler.does_cached_translated_dataset_exist():
+		translationHandler = TranslationHandler(translation_mode="api")
+		translated_queries, translated_docs = translationHandler.translate_raw_data(POSSIBLE_LANGUAGES, queries, documents)
+		dataHandler.cache_translated_dataset_on_disk(translated_queries, translated_docs)
+
+	queries_with_translations, docs_with_translations = dataHandler.load_translated_dataset_from_disk()
+
+	# preprocessor = Preprocessor(documents, queries, translation_target, translation_langs)
+	# preprocessor.preprocess()
 	'''
-	documents, queries, qrels = data_handling.loadData()    
 	
 	preprocessed_data = TranslationHander.translate([it, de], query)
 
@@ -21,9 +37,9 @@ def experiment_pipeline():
 	visualizer.visualize()
 	'''
 
-def main(argv):
-	# TODO Max: parse arguments
-	print(argv)
+def run():
+	args = utils.parse_arguments()
+	experiment_pipeline(args.translation_target[0], args.translation_languages)
 
 if __name__ == "__main__":
-	main(sys.argv)
+	run()
