@@ -16,13 +16,6 @@ class Preprocessor:
 		self.queries, self.docs = self.dataHandler.get_raw_queries_and_docs()
 
 
-	def lower_all_translations(self):
-		for languages in self.translation_languages:
-			column_name = f"text_{languages}"
-			self.docs[column_name] = self.docs[column_name].str.lower()
-			self.queries[column_name] = self.queries[column_name].str.lower()
-
-
 	def get_possible_text_columns(self):
 		possible_columns = ["text"]
 		for language in self.translation_languages:
@@ -45,10 +38,23 @@ class Preprocessor:
 
 		return PreprocessedData(preprocessed_queries, preprocessed_docs)
 	
+
 	def lower_untranslated_text(self):
 		self.queries["text"] = self.queries["text"].str.lower()
 		self.docs["text"] = self.docs["text"].str.lower()
 
+
+	def lower_all_translations(self):
+		for languages in self.translation_languages:
+			column_name = f"text_{languages}"
+			self.docs[column_name] = self.docs[column_name].str.lower()
+			self.queries[column_name] = self.queries[column_name].str.lower()
+
+
+	def translate_dataset_if_not_cached(self):
+		if not self.dataHandler.does_cached_translated_dataset_exist():
+			translated_queries, translated_docs = self.translationHandler.translate_raw_data(self.queries, self.documents)
+			self.dataHandler.cache_translated_dataset_on_disk(translated_queries, translated_docs)
 
 	def preprocess(self):
 		# set all text lowercase
@@ -58,9 +64,7 @@ class Preprocessor:
 			preprocessed_data = PreprocessedData(self.queries, self.docs)
 
 		elif self.experiment_mode == "multilingual":
-			if not self.dataHandler.does_cached_translated_dataset_exist():
-				translated_queries, translated_docs = self.translationHandler.translate_raw_data(self.queries, self.documents)
-				self.dataHandler.cache_translated_dataset_on_disk(translated_queries, translated_docs)
+			self.translate_dataset_if_not_cached()
 
 			self.queries, self.docs = self.dataHandler.load_translated_dataset_from_disk()
 			self.lower_all_translations()

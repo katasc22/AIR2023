@@ -7,10 +7,10 @@ from experiment.preprocessing.TranslationHandler import TranslationHandler
 
 POSSIBLE_LANGUAGES = ["de", "it", "fr"] #TODO: Add it to some type of config
 
-def experiment_pipeline(experiment_mode: str, translation_target: str, translation_langs: list[str]):
+def experiment_pipeline(experiment_mode: str, translation_target: str, translation_langs: list[str], translation_mode: str):
 	print("[Main] Starting experiment ...")
 	dataHandler = DataHandler()
-	translationHandler = TranslationHandler("api", POSSIBLE_LANGUAGES)
+	translationHandler = TranslationHandler(translation_mode, POSSIBLE_LANGUAGES)
 
 	preprocessor = Preprocessor(experiment_mode, dataHandler, translationHandler, translation_target, translation_langs)
 	preprocessed_data = preprocessor.preprocess()
@@ -34,7 +34,7 @@ def experiment_pipeline(experiment_mode: str, translation_target: str, translati
 
 def run():
 	args = utils.parse_arguments()
-	experiment_pipeline(args.experiment_mode[0], args.translation_target[0], args.translation_languages)
+	experiment_pipeline(args.experiment_mode[0], args.translation_target[0], args.translation_languages, args.translation_mode[0])
 
 if __name__ == "__main__":
 	run()

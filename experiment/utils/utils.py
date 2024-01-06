@@ -12,6 +12,8 @@ def parse_arguments():
 							help='(Optional - Preprocessing) Specifies the translation target - either queries or docs. If not given the documents are translated, which means that in the experiment a english query is matched to multilingual translated documents.')
 	parser.add_argument('--translation-languages', nargs="+", choices=["de", "it", "fr"], default=["de", "it", "fr"],
 							help='(Optional - Preprocessing) Specifies the languages for the translation of queries or documents. If not given the targets are translated into all three languages.')
+	parser.add_argument('--translation-mode', nargs=1, choices=["api", "transformer"], default=["api"],
+							help='(Optional - Preprocessing) Specifies the mode of the TranslationHander. \"transformer\" for neural machine translation - \"api\" for machine translation api from GoogleTranslator')
 
 	args = parser.parse_args()
 
