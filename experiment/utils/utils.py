@@ -6,6 +6,8 @@ def validate_args(parser, args):
 
 def parse_arguments():
 	parser = argparse.ArgumentParser(description="This script is responsive for running the whole experiment pipeline for this IR experiment.")
+	parser.add_argument('--experiment-mode', nargs=1, choices=["monolingual", "multilingual"], default=["monolingual"],
+							help='(Optional - Experiment) Specifies the experiment mode. Use monolinugal or multilingual dataset. If monolingual is used \"translation\" params have no effect.')
 	parser.add_argument('--translation-target', nargs=1, choices=["queries", "docs"], default=["queries"],
 							help='(Optional - Preprocessing) Specifies the translation target - either queries or docs. If not given the documents are translated, which means that in the experiment a english query is matched to multilingual translated documents.')
 	parser.add_argument('--translation-languages', nargs="+", choices=["de", "it", "fr"], default=["de", "it", "fr"],

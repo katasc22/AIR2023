@@ -1,7 +1,7 @@
-import pandas as pd
+from pandas import DataFrame
 from dataclasses import dataclass
 
 @dataclass
 class PreprocessedData():
-	docs: pd.DataFrame
-	queries: pd.DataFrame
+	queries: DataFrame
+	docs: DataFrame

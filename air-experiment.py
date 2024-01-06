@@ -2,26 +2,22 @@ from experiment.utils import utils
 from experiment.data.DataHandler import DataHandler
 from experiment.preprocessing.Preprocessor import Preprocessor
 from experiment.preprocessing.TranslationHandler import TranslationHandler
-from experiment.evaluation import Evaluator
-from experiment.visualization import Visualizer
+# from experiment.evaluation import Evaluator
+# from experiment.visualization import Visualizer
 
-POSSIBLE_LANGUAGES = ["de", "it", "fr"]
+POSSIBLE_LANGUAGES = ["de", "it", "fr"] #TODO: Add it to some type of config
 
-def experiment_pipeline(translation_target: str, translation_langs: list[str]):
+def experiment_pipeline(experiment_mode: str, translation_target: str, translation_langs: list[str]):
+	print("[Main] Starting experiment ...")
 	dataHandler = DataHandler()
-	documents, queries = dataHandler.get_raw_queries_and_docs()
+	translationHandler = TranslationHandler("api", POSSIBLE_LANGUAGES)
+
+	preprocessor = Preprocessor(experiment_mode, dataHandler, translationHandler, translation_target, translation_langs)
+	preprocessed_data = preprocessor.preprocess()
+	
+	print(preprocessed_data.docs)
+
 	qrels = dataHandler.get_qrels()
-
-	# pretranslate dataset into all possible languages and cache on disk if translated dataset does not exist yet
-	if not dataHandler.does_cached_translated_dataset_exist():
-		translationHandler = TranslationHandler(translation_mode="api")
-		translated_queries, translated_docs = translationHandler.translate_raw_data(POSSIBLE_LANGUAGES, queries, documents)
-		dataHandler.cache_translated_dataset_on_disk(translated_queries, translated_docs)
-
-	queries_with_translations, docs_with_translations = dataHandler.load_translated_dataset_from_disk()
-
-	# preprocessor = Preprocessor(documents, queries, translation_target, translation_langs)
-	# preprocessor.preprocess()
 	'''
 	
 	preprocessed_data = TranslationHander.translate([it, de], query)
@@ -38,7 +34,7 @@ def experiment_pipeline(translation_target: str, translation_langs: list[str]):
 
 def run():
 	args = utils.parse_arguments()
-	experiment_pipeline(args.translation_target[0], args.translation_languages)
+	experiment_pipeline(args.experiment_mode[0], args.translation_target[0], args.translation_languages)
 
 if __name__ == "__main__":
 	run()

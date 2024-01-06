@@ -1,5 +1,5 @@
-import ir_datasets
 import os
+import ir_datasets
 import pandas as pd
 
 class DataHandler:
@@ -42,7 +42,7 @@ class DataHandler:
 
 
     def get_raw_queries_and_docs(self):
-        return self.docs, self.queries
+        return self.queries, self.docs
     
 
     def get_qrels(self):
