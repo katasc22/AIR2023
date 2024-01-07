@@ -4,15 +4,15 @@ from experiment.utils import utils
 from experiment.data.DataHandler import DataHandler
 from experiment.preprocessing.Preprocessor import Preprocessor
 from experiment.preprocessing.TranslationHandler import TranslationHandler
+from experiment.evaluation.Evaluator import Evaluator
+from experiment.visualization.Visualizer import Visualizer
 from experiment.ExperimentRunner import ExperimentRunner
-# from experiment.evaluation import Evaluator
-# from experiment.visualization import Visualizer
 
 POSSIBLE_LANGUAGES = ["de", "it", "fr"] #TODO: Add it to some type of config
 PT_DEVICE = device('cuda' if cuda.is_available() else 'cpu')
 
 def experiment_pipeline(experiment_mode: str, experiment_approach: str, translation_target: str, translation_langs: list[str], translation_mode: str):
-	print("[Main] Starting experiment ...")
+	print("[Main] Starting experiments ...")
 	dataHandler = DataHandler()
 	translationHandler = TranslationHandler(translation_mode, POSSIBLE_LANGUAGES, PT_DEVICE)
 
@@ -20,22 +20,14 @@ def experiment_pipeline(experiment_mode: str, experiment_approach: str, translat
 	preprocessed_data = preprocessor.preprocess()
 	
 	experimentRunner = ExperimentRunner(experiment_approach, experiment_mode, preprocessed_data, PT_DEVICE)
-	experimentRunner.runExperiment()
+	ex_results = experimentRunner.runExperiment()
 
-	qrels = dataHandler.get_qrels()
-	'''
-	
-	preprocessed_data = TranslationHander.translate([it, de], query)
+	evaluator = Evaluator(ex_results, dataHandler)
+	val_results = evaluator.evaluate()
 
-	exRunner = ExperimentRunner(preprocessed_data, mode) # mode e.g distiluse
-	ex_results = exRunner.run()
-
-	evaluator = Evaluator(results, true, true, false) # e.g Recall = true, Precision = true, F1Score = false
-	eval_results = evaluator.evaluate()
-
-	visualizer = Visualizer(eval_results, options for what to plot)
+	visualizer = Visualizer(val_results, dataHandler)
 	visualizer.visualize()
-	'''
+	print("[Main] Finished experiments ...")
 
 def run():
 	args = utils.parse_arguments()
