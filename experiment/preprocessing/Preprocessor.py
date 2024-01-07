@@ -14,6 +14,7 @@ class Preprocessor:
 		self.translation_languages = translation_languages
 
 		self.queries, self.docs = self.dataHandler.get_raw_queries_and_docs()
+		self.convert_id_column_to_int()
 
 
 	def get_possible_text_columns(self):
@@ -38,6 +39,9 @@ class Preprocessor:
 
 		return PreprocessedData(preprocessed_queries, preprocessed_docs)
 	
+	def convert_id_column_to_int(self):
+		self.queries["query_id"] = self.queries["query_id"].astype(int)
+		self.docs["doc_id"] = self.docs["doc_id"].astype(int)
 
 	def lower_untranslated_text(self):
 		self.queries["text"] = self.queries["text"].str.lower()
@@ -64,6 +68,8 @@ class Preprocessor:
 		self.lower_untranslated_text()
 
 		if self.experiment_mode == "monolingual":
+			print(self.queries["query_id"].dtype)
+			print(self.docs["doc_id"].dtype)
 			preprocessed_data = PreprocessedData(self.queries, self.docs)
 
 		elif self.experiment_mode == "multilingual":

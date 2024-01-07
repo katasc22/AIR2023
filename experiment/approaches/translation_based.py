@@ -1,6 +1,7 @@
 from sentence_transformers import SentenceTransformer, util
 from torch import topk
 
+# @profile
 def retrieve_k_documents_per_query_tb_monolingual(queries, documents, k, device):
 
     model = SentenceTransformer('sentence-transformers/all-MiniLM-L12-v2', device=device)
