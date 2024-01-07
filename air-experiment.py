@@ -1,3 +1,5 @@
+from torch import device, cuda
+
 from experiment.utils import utils
 from experiment.data.DataHandler import DataHandler
 from experiment.preprocessing.Preprocessor import Preprocessor
@@ -7,16 +9,17 @@ from experiment.ExperimentRunner import ExperimentRunner
 # from experiment.visualization import Visualizer
 
 POSSIBLE_LANGUAGES = ["de", "it", "fr"] #TODO: Add it to some type of config
+PT_DEVICE = device('cuda' if cuda.is_available() else 'cpu')
 
 def experiment_pipeline(experiment_mode: str, experiment_approach: str, translation_target: str, translation_langs: list[str], translation_mode: str):
 	print("[Main] Starting experiment ...")
 	dataHandler = DataHandler()
-	translationHandler = TranslationHandler(translation_mode, POSSIBLE_LANGUAGES)
+	translationHandler = TranslationHandler(translation_mode, POSSIBLE_LANGUAGES, PT_DEVICE)
 
 	preprocessor = Preprocessor(experiment_mode, dataHandler, translationHandler, translation_target, translation_langs)
 	preprocessed_data = preprocessor.preprocess()
 	
-	experimentRunner = ExperimentRunner(experiment_approach, experiment_mode, preprocessed_data)
+	experimentRunner = ExperimentRunner(experiment_approach, experiment_mode, preprocessed_data, PT_DEVICE)
 	experimentRunner.runExperiment()
 
 	qrels = dataHandler.get_qrels()

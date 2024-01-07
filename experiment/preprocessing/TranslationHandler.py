@@ -2,9 +2,10 @@ from deep_translator import GoogleTranslator
 from transformers import pipeline
 
 class TranslationHandler:
-	def __init__(self, translation_mode, possible_languages):
+	def __init__(self, translation_mode, possible_languages, device):
 		self.translation_mode = translation_mode
 		self.possible_languages = possible_languages
+		self.device = device
 
 
 	def translate(self, src_lang, target_lang, text):
@@ -18,7 +19,7 @@ class TranslationHandler:
 			target_column = f"text_{language}"
 			if self.translation_mode == "transformer":
 				model_checkpoint = f"Helsinki-NLP/opus-mt-en-{language}"
-				translator = pipeline("translation", model=model_checkpoint)
+				translator = pipeline("translation", model=model_checkpoint, device=self.device)
 				queries[target_column] = queries["text"].apply(lambda text: translator(text)[0]["translation_text"])
 
 			elif self.translation_mode == "api":
@@ -33,7 +34,7 @@ class TranslationHandler:
 			target_column = f"text_{language}"
 			if self.translation_mode == "transformer":
 				model_checkpoint = f"Helsinki-NLP/opus-mt-en-{language}"
-				translator = pipeline("translation", model=model_checkpoint)
+				translator = pipeline("translation", model=model_checkpoint, device=self.device)
 				docs[target_column] = docs["text"].apply(lambda text: translator(text)[0]["translation_text"])
 
 			elif self.translation_mode == "api":	

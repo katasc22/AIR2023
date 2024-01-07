@@ -1,46 +1,28 @@
-from sentence_transformers import SentenceTransformer
-import numpy as np
-from data import data_handling
-from sklearn.metrics.pairwise import cosine_similarity
-import pandas as pd
+from sentence_transformers import SentenceTransformer, util
+from torch import topk
 
-def retrieve_k_documents(k, documents, query):
+def retrieve_k_documents_per_query_tb_monolingual(queries, documents, k, device):
 
-    ### Delete below (only for testing purposes) ###
-    #documents = ["Helly my name is John", "I have a dog", "I do not take my dog for a walk", "DummyQuery", "DummyQuery also", "Dummy query like this"]
-    #query = ["I take my dog for a walk"]
-    ### Until here ###
-    model = SentenceTransformer('sentence-transformers/all-MiniLM-L12-v2')
+    model = SentenceTransformer('sentence-transformers/all-MiniLM-L12-v2', device=device)
 
-    print("Computing embeddings..")
-    embDocs = model.encode(documents["text"])
-    embQuers = model.encode(query["text"])
-    embQuer = embQuers[0]
+    print("[Approach: TranslationBased] Computing document embeddings ...")
+    doc_embeds = model.encode(documents["text"], convert_to_tensor=True)
 
-    print("Computing similarities...")
-    similarity = cosine_similarity(embQuer.reshape(1, -1), embDocs)
+    retrieved_docs_per_query = {}
+    print("[Approach: TranslationBased] Retrieve documents per query ...")
+    for _, query in queries.iterrows():
+        query_embed = model.encode(query["text"], convert_to_tensor=True)
 
-    # Get indices and score of top k documents
-    top_simil_indices = np.argsort(similarity[0])[::-1][:k]
-    top_simil_score = similarity[0][top_simil_indices]
+        similarity_scores = util.cos_sim(query_embed, doc_embeds)
 
-    # Retrieve top k documents
-    top_k_docs = documents.iloc[top_simil_indices]
+        retrieved_results = topk(similarity_scores, k)
 
-    print("Top ", k, "matching documents for query: ", query["text"].iloc[0])
-    print(top_k_docs)
+        doc_indices = retrieved_results[1].squeeze().tolist()
+        
+        retrieved_docs = documents.iloc[doc_indices]
+        
+        retrieved_docs_per_query[query["query_id"]] = retrieved_docs["doc_id"].tolist()
 
-    # Creating a dataframe
-    result_df = pd.DataFrame({
-        'doc_id': top_k_docs['doc_id'].values,
-        'text': top_k_docs['text'].values,
-        'Similarity Score': top_simil_score
-    })
-    print(result_df)
-    return result_df
+    print("[Approach: TranslationBased] Finished.")
 
-
-documents, queries, qrels = data_handling.loadData()
-
-### For testing purposes using k = 2 here later change to k = 5 ###
-retrieve_k_documents(5, documents, queries)
+    return retrieved_docs_per_query
