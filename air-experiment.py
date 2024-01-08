@@ -14,12 +14,12 @@ PT_DEVICE = device('cuda' if cuda.is_available() else 'cpu')
 def experiment_pipeline(experiment_mode: str, experiment_approach: str, translation_target: str, translation_langs: list[str], translation_mode: str):
 	print("[Main] Starting experiments ...")
 	dataHandler = DataHandler()
-	translationHandler = TranslationHandler(translation_mode, POSSIBLE_LANGUAGES, PT_DEVICE)
+	translationHandler = TranslationHandler(translation_mode, translation_target, POSSIBLE_LANGUAGES, PT_DEVICE)
 
-	preprocessor = Preprocessor(experiment_mode, dataHandler, translationHandler, translation_target, translation_langs)
+	preprocessor = Preprocessor(experiment_mode, dataHandler, translationHandler, translation_langs)
 	preprocessed_data = preprocessor.preprocess()
 	
-	experimentRunner = ExperimentRunner(experiment_approach, experiment_mode, preprocessed_data, PT_DEVICE)
+	experimentRunner = ExperimentRunner(experiment_approach, experiment_mode, preprocessed_data, translationHandler, PT_DEVICE)
 	ex_results = experimentRunner.runExperiment()
 
 	evaluator = Evaluator(ex_results, dataHandler)

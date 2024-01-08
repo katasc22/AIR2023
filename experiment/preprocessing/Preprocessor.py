@@ -4,13 +4,11 @@ from .TranslationHandler import TranslationHandler
 from random import seed, choice 
 
 class Preprocessor:
-	def __init__(self, experiment_mode, dataHandler: DataHandler, translationHandler: TranslationHandler, 
-			  translation_target: str, translation_languages: list[str]):
+	def __init__(self, experiment_mode, dataHandler: DataHandler, translationHandler: TranslationHandler, translation_languages: list[str]):
 		self.experiment_mode = experiment_mode
 		self.dataHandler = dataHandler
 		self.translationHandler = translationHandler
 
-		self.target = translation_target
 		self.translation_languages = translation_languages
 
 		self.queries, self.docs = self.dataHandler.get_raw_queries_and_docs()
@@ -28,20 +26,23 @@ class Preprocessor:
 	def prepare_translated_data(self):
 		seed(22) #TODO: Add parameter for seed
 		possible_columns = self.get_possible_text_columns()
-		if self.target == "docs":
+		if self.translationHandler.translation_target == "docs":
 			preprocessed_queries = self.queries[["query_id", "text"]].copy()
 			preprocessed_docs = self.docs[["doc_id"]].copy()
 			preprocessed_docs["text"] = self.docs.apply(lambda row: row[choice(possible_columns)], axis=1)
-		elif self.target == "queries":
+
+		elif self.translationHandler.translation_target == "queries":
 			preprocessed_docs = self.docs[["doc_id", "text"]].copy()
 			preprocessed_queries = self.queries[["query_id"]].copy()
 			preprocessed_queries["text"] = self.queries.apply(lambda row: row[choice(possible_columns)], axis=1)
 
 		return PreprocessedData(preprocessed_queries, preprocessed_docs)
 	
+
 	def convert_id_column_to_int(self):
 		self.queries["query_id"] = self.queries["query_id"].astype(int)
 		self.docs["doc_id"] = self.docs["doc_id"].astype(int)
+
 
 	def lower_untranslated_text(self):
 		self.queries["text"] = self.queries["text"].str.lower()

@@ -1,5 +1,21 @@
+from ..preprocessing.TranslationHandler import TranslationHandler
+
 from sentence_transformers import SentenceTransformer, util
+from transformers import pipeline
 from torch import topk
+
+text = [
+    "mesure des températures du plasma lors d'une décharge d'arc à l'aide de techniques d'ondes de choc"
+]
+
+model_checkpoint = "papluca/xlm-roberta-base-language-detection"
+pipe = pipeline("text-classification", model=model_checkpoint)
+test = pipe(text, top_k=1, truncation=True)
+
+print(test)
+def retrieve_k_documents_per_query_tb_multilingual(queries, documents, k, device):
+    pass
+
 
 # @profile
 def retrieve_k_documents_per_query_tb_monolingual(queries, documents, k, device):

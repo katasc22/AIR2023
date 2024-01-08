@@ -2,8 +2,9 @@ from deep_translator import GoogleTranslator
 from transformers import pipeline
 
 class TranslationHandler:
-	def __init__(self, translation_mode, possible_languages, device):
+	def __init__(self, translation_mode, translation_target, possible_languages, device):
 		self.translation_mode = translation_mode
+		self.translation_target = translation_target
 		self.possible_languages = possible_languages
 		self.device = device
 
