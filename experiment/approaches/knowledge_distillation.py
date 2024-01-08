@@ -1,30 +1,34 @@
 import torch
+import time
 from sentence_transformers import SentenceTransformer, util
-import numpy as np
-from experiment.data import DataHandler
-from sklearn.metrics.pairwise import cosine_similarity
-import pandas as pd
+from memory_profiler import profile
 
+@profile
 def retrieve_k_documents_per_query_distiluse(queries, documents, k, device):
-    model = SentenceTransformer('sentence-transformers/distiluse-base-multilingual-cased-v2')
-    model.to(device)
-    print("[Approach: Distiluse] Computing embeddings..")
-    doc_embs = model.encode(documents["text"])
-    queries["emb"] = model.encode(queries["text"])
-    print("[Approach: Distiluse] Computing similarities...")
+	start_time = time.time()
+	model = SentenceTransformer('sentence-transformers/distiluse-base-multilingual-cased-v2', device=device)
 
-    retrieved_docs_per_query = {}
-    print("[Approach: Distiluse] Retrieve documents per query ...")
-    for _, query in queries.iterrows():
-        similarity_scores = util.cos_sim(query["emb"], doc_embs)
+	print("[Approach: Distiluse] Computing embeddings..")
+	doc_embs = model.encode(documents["text"], convert_to_tensor=True)
+	
+	print(doc_embs.shape)
+	retrieved_docs_per_query = {}
+	print("[Approach: Distiluse] Retrieve documents per query ...")
+	for _, query in queries.iterrows():
+		query_embed = model.encode(query["text"], convert_to_tensor=True)
 
-        retrieved_results = torch.topk(similarity_scores, k)
+		similarity_scores = util.cos_sim(query_embed, doc_embs)
 
-        doc_indices = retrieved_results[1].squeeze().tolist()
+		retrieved_results = torch.topk(similarity_scores, k)
 
-        retrieved_docs = documents.iloc[doc_indices]
+		doc_indices = retrieved_results[1].squeeze().tolist()
 
-        retrieved_docs_per_query[query["query_id"]] = retrieved_docs["doc_id"].tolist()
+		retrieved_docs = documents.iloc[doc_indices]
 
-    print("[Approach: Distiluse] Finished.")
-    return retrieved_docs_per_query
+		retrieved_docs_per_query[query["query_id"]] = retrieved_docs["doc_id"].tolist()
+
+	print("[Approach: Distiluse] Finished.")
+	end_time = time.time()
+	print(f"[Approach: Distiluse] Execution Time: {end_time - start_time} seconds")
+	print(torch.cuda.max_memory_allocated())
+	return retrieved_docs_per_query
