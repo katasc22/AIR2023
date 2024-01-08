@@ -9,7 +9,7 @@ Comparing the different approaches for cross-lingual information retrieval.
 pip install --upgrade ir_datasets
 pip install -U sentence-transformers
 ## Dataset used
-Vaswani
+[Vaswani](https://ir-datasets.com/vaswani.html)
 * Small corpus of roughly 11,000 scientific abstracts
 * English only (translation if necessary done by us)
 ## Conclusions
