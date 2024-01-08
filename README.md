@@ -8,18 +8,19 @@
 * How do different cross-lingual information retrieval approaches perform in comparison to each other?
 * What are tradeoffs between the chosen methods?
 ## Getting started
-pip install --upgrade ir_datasets
+'''pip install -r requirements.txt'''
 
-pip install -U sentence-transformers
+'''air-experiment.py -h'''
 ## Dataset
 [Vaswani](https://ir-datasets.com/vaswani.html)
 * Small corpus of roughly 11,000 scientific abstracts
 * English only (translation if necessary done by us)
 ## Conclusions
-* MiniLM (monolingual approach) has the best overall performance.
-* Translation-based approach also good results but there is longer execution time and more resources needed when comparing MBERT/distiluse with miniLM.
-* MBERT does not produce good sentence embeddings out of the box.
-* It is important to choose the correct model for your task, otherwise results and performance may vary.
+* Monolingual model with pretranslated queries has good performance but is bad at scale.
+* Choosing the right model for the respective task significantly impacts retrieval performance
+* mBERT does not produce good sentence embeddings out of the box.
+Best approach:
+* Using fine-tuned multilingual model. It provides the best trade-offs between retrieval performance and computational requirements.
 ## Contributors
 ### Katharina Aschauer
 * Distiluse-base Approach
