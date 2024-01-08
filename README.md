@@ -1,6 +1,6 @@
 # AIR2023
 ## Experiment AIR23
-### Different Approaches to Multlingual Retrieval
+### Comparing Different Approaches to Multlingual Retrieval
 Comparing the different approaches for cross-lingual information retrieval.
 * How do different cross-lingual retrieval approaches perform in comparison to each other?
 * Does a monolingual model that translates the query outperform a pretrained multlingual model?
