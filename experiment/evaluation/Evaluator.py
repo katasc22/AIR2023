@@ -16,23 +16,28 @@ class Evaluator:
 		retrieved_docs_per_query = ex_result.experiment_result
 
 		precision_scores = []
+		average_precision_scores = []
 		recall_scores = []
 		f1_scores = []
 		for q_id, docs in retrieved_docs_per_query.items():
 			precision = self.calc_precision(q_id, docs)
 			precision_scores.append(precision)
-			#print(f"Precision: {precision}")
+
+			average_precision = self.calc_average_precision(q_id, docs)
+			average_precision_scores.append(average_precision)
+
 			recall = self.calc_recall(q_id, docs)
 			recall_scores.append(recall)
-			#print(f"Recall: {recall}")
+
 			f1_score = self.calc_f1_score(precision, recall)
 			f1_scores.append(f1_score)
 
-		avg_precision_score = sum(precision_scores) / len(precision_scores)
-		avg_recall_score = sum(recall_scores) / len(recall_scores)
-		avg_f1_score = sum(f1_scores) / len(f1_scores)
+		precision_score_mean = sum(precision_scores) / len(precision_scores)
+		recall_score_mean = sum(recall_scores) / len(recall_scores)
+		f1_score_mean = sum(f1_scores) / len(f1_scores)
+		mean_average_precision = sum(average_precision_scores) / len(average_precision_scores)
 
-		print(f"Precision: {avg_precision_score} - Recall: {avg_recall_score} - F1score: {avg_f1_score}")
+		print(f"Precision: {precision_score_mean} - Recall: {recall_score_mean} - F1score: {f1_score_mean} - MAP: {mean_average_precision}")
 
 		return ExperimentValidationData(ex_result.experiment_approach)
 
@@ -68,10 +73,26 @@ class Evaluator:
 				false_positives += 1
                 
 		return true_positives / (true_positives + false_positives)
-
-
-	def calc_precision_at_k(self, q_id, retrieved_docs, k: int):
+	
+	
+	def calc_average_precision(self, q_id, retrieved_docs):
 		ground_truth_docs = self.get_ground_truth_docs_per_query(q_id)
+		precisions_at_k = []
+		number_of_retrieved_relevant_items = 0
+		for index, doc in enumerate(retrieved_docs):
+			k = index + 1
+			if doc in ground_truth_docs:
+				number_of_retrieved_relevant_items += 1
+				precision_at_k = self.calc_precision_at_k(ground_truth_docs, retrieved_docs, k)
+				precisions_at_k.append(precision_at_k)
+
+		if number_of_retrieved_relevant_items == 0:
+			return 0 
+		else:
+			return sum(precisions_at_k) / number_of_retrieved_relevant_items
+			
+
+	def calc_precision_at_k(self, ground_truth_docs, retrieved_docs, k: int):
 		print(ground_truth_docs)
 		true_positives_at_k = 0
 		false_positives_at_k = 0
