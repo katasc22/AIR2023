@@ -1,6 +1,7 @@
 from .data.PreprocessedData import PreprocessedData
 from .data.ExperimentData import ExperimentResultData
 from .approaches.translation_based import retrieve_k_documents_per_query_tb_monolingual
+from .approaches.multilingual_bert import retrieve_k_documents_per_query_mbert
 
 class ExperimentRunner:
 	def __init__(self, experiment_approach: str, experiment_mode: str, preprocessed_data: PreprocessedData, device):
@@ -18,7 +19,11 @@ class ExperimentRunner:
 																			15, device=self.device)
 			
 			return (ExperimentResultData("translation-based", retrieved_docs_per_query, 15), )
+		
 		elif self.experiment_approach == "ml-mbert":
-			pass
+			retrieved_docs_per_query  = retrieve_k_documents_per_query_mbert(self.preprocessed_data.queries, self.preprocessed_data.docs, 
+																			15, device=self.device)
+			return (ExperimentResultData("ml-mbert", retrieved_docs_per_query, 15), )
+		
 		elif self.experiment_approach == "ml_knowledge_distillation":
 			pass

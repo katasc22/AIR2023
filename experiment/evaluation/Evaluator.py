@@ -93,7 +93,6 @@ class Evaluator:
 			
 
 	def calc_precision_at_k(self, ground_truth_docs, retrieved_docs, k: int):
-		print(ground_truth_docs)
 		true_positives_at_k = 0
 		false_positives_at_k = 0
 		for doc in retrieved_docs[:k]:
