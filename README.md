@@ -2,6 +2,9 @@
 ## Experiment AIR23
 ### Different Approaches to Multlingual Retrieval
 Comparing the different approaches for cross-lingual information retrieval.
+* How do different cross-lingual retrieval approaches perform in comparison to each other?
+* Does a monolingual model that translates the query outperform a pretrained multlingual model?
+* What are tradeoffs between the three different approaches we compared within our project?
 ## Getting started: 
 pip install --upgrade ir_datasets
 pip install -U sentence-transformers
