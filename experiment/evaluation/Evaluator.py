@@ -4,8 +4,8 @@ from ..data.DataHandler import DataHandler
 from sklearn.metrics import precision_score
 
 class Evaluator:
-	def __init__(self, experiment_results, dataHandler: DataHandler):
-		self.experiment_results = experiment_results
+	def __init__(self, experiment_result, dataHandler: DataHandler):
+		self.experiment_result = experiment_result
 		self.dataHandler = dataHandler
 
 		self.qrels = dataHandler.get_qrels()
@@ -43,13 +43,9 @@ class Evaluator:
 
 
 	def evaluate(self):
-		validation_results = []
+		validation_result = self.evaluate_experiment(self.experiment_result)
 
-		for ex_result in self.experiment_results:
-			ex_validation_data = self.evaluate_experiment(ex_result)
-			validation_results.append(ex_validation_data)
-
-		return tuple(validation_results)
+		return validation_result
 	
 
 	def calc_f1_score(self, precision, recall):

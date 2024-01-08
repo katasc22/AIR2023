@@ -10,7 +10,14 @@ class TranslationHandler:
 
 
 	def translate(self, src_lang, target_lang, text):
-		return GoogleTranslator(source=src_lang, target=target_lang).translate(text)
+		if self.translation_mode == "transformer":
+			model_checkpoint = f"Helsinki-NLP/opus-mt-{src_lang}-{target_lang}"
+			translator = pipeline("translation", model=model_checkpoint, device=self.device)
+
+			return translator(text)[0]["translation_text"]
+		
+		elif self.translation_mode == "api":
+			return GoogleTranslator(source=src_lang, target=target_lang).translate(text)
 
 
 	def translate_raw_data(self, queries, docs):
