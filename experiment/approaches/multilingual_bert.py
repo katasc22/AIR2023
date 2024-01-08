@@ -13,9 +13,11 @@ def mean_pooling(model_output, attention_mask):
     sum_mask = torch.clamp(input_mask_expanded.sum(1), min=1e-9)
     return sum_embeddings / sum_mask
 
+
 def retrieve_k_documents_per_query_mbert(queries, documents, k, device):
       
 	model = BertModel.from_pretrained("bert-base-multilingual-cased")
+	print(model)
 	model.to(device)
 	tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-cased')
     

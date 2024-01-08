@@ -6,7 +6,7 @@ def validate_args(parser, args):
 
 def parse_arguments():
 	parser = argparse.ArgumentParser(description="This script is responsive for running the whole experiment pipeline for this IR experiment.")
-	parser.add_argument('--experiment-approach', nargs=1, choices=["all", "translation-based", "ml-mbert", "ml_knowledge_distillation"], default=["translation-based"],
+	parser.add_argument('--experiment-approach', nargs=1, choices=["translation-based", "ml-mbert", "ml_knowledge_distillation"], default=["translation-based"],
 							help='(Optional - Experiment) Specifies which approaches are tested during the experiment. Default is \"all\".')
 	parser.add_argument('--experiment-mode', nargs=1, choices=["monolingual", "multilingual"], default=["monolingual"],
 							help='(Optional - Experiment) Specifies the experiment mode. Use monolinugal or multilingual dataset. If monolingual is used \"translation\" params have no effect.')

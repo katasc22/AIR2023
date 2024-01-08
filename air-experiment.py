@@ -20,13 +20,12 @@ def experiment_pipeline(experiment_mode: str, experiment_approach: str, translat
 	preprocessed_data = preprocessor.preprocess()
 	
 	experimentRunner = ExperimentRunner(experiment_approach, experiment_mode, preprocessed_data, translationHandler, PT_DEVICE)
-	ex_results = experimentRunner.runExperiment()
+	ex_result = experimentRunner.runExperiment()
 
-	evaluator = Evaluator(ex_results, dataHandler)
-	val_results = evaluator.evaluate()
+	evaluator = Evaluator(ex_result, dataHandler)
+	val_result = evaluator.evaluate()
 
-	visualizer = Visualizer(val_results, dataHandler)
-	visualizer.visualize()
+	#TODO: val_results to disk
 	print("[Main] Finished experiments ...")
 
 def run():
