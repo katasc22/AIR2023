@@ -1,10 +1,12 @@
 # AIR2023
 ## Experiment AIR23
 ### Comparing Different Approaches to Multlingual Retrieval
-Comparing the different approaches for cross-lingual information retrieval.
-* How do different cross-lingual retrieval approaches perform in comparison to each other?
-* Does a monolingual model that translates the query outperform a pretrained multlingual model?
-* What are tradeoffs between the three different approaches we compared within our project?
+* Overcome language barriers
+* Enhance user accessibility
+### Research Questions
+* What is the most convenient approach to retrieve documents from multilingual queries?
+* How do different cross-lingual information retrieval approaches perform in comparison to each other?
+* What are tradeoffs between the chosen methods?
 ## Getting started
 pip install --upgrade ir_datasets
 
@@ -20,11 +22,14 @@ pip install -U sentence-transformers
 * It is important to choose the correct model for your task, otherwise results and performance may vary.
 ## Contributors
 ### Katharina Aschauer
-* Knowledge Distillation
+* Distiluse-base Approach
+* Evaluation
 * Plotting
 ### Maximilian Binder
-* MBERT
+* mBERT Approach
 * Experiment Framework
+* Preprocessing
 ### Jan-Peter Svetits
-* Monolingual
+* MiniLM Approach
 * Presentation
+* Preprocessing
