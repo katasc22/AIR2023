@@ -8,9 +8,13 @@
 * How do different cross-lingual information retrieval approaches perform in comparison to each other?
 * What are tradeoffs between the chosen methods?
 ## Getting started
-'''pip install -r requirements.txt'''
+```
+pip install -r requirements.txt```
 
-'''air-experiment.py -h'''
+
+```
+air-experiment.py -h```
+
 ## Dataset
 [Vaswani](https://ir-datasets.com/vaswani.html)
 * Small corpus of roughly 11,000 scientific abstracts
