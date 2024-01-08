@@ -7,6 +7,7 @@ Comparing the different approaches for cross-lingual information retrieval.
 * What are tradeoffs between the three different approaches we compared within our project?
 ## Getting started: 
 pip install --upgrade ir_datasets
+
 pip install -U sentence-transformers
 ## Dataset used
 [Vaswani](https://ir-datasets.com/vaswani.html)
