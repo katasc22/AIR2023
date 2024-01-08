@@ -6,12 +6,13 @@ from memory_profiler import profile
 @profile
 def retrieve_k_documents_per_query_distiluse(queries, documents, k, device):
 	start_time = time.time()
-	model = SentenceTransformer('sentence-transformers/distiluse-base-multilingual-cased-v2', device=device)
+	# model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-mpnet-base-v2', device=device)
+	model = SentenceTransformer('sentence-transformers/sentence-transformers/distiluse-base-multilingual-cased-v2', device=device)
 
 	print("[Approach: Distiluse] Computing embeddings..")
 	doc_embs = model.encode(documents["text"], convert_to_tensor=True)
 	
-	print(doc_embs.shape)
+	#print(doc_embs.shape)
 	retrieved_docs_per_query = {}
 	print("[Approach: Distiluse] Retrieve documents per query ...")
 	for _, query in queries.iterrows():

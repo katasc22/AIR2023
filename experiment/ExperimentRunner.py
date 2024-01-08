@@ -36,11 +36,11 @@ class ExperimentRunner:
 		
 		elif self.experiment_approach == "ml-mbert":
 			retrieved_docs_per_query  = retrieve_k_documents_per_query_mbert(self.preprocessed_data.queries, self.preprocessed_data.docs, 
-																			10, device=self.device)
+																			15, device=self.device)
 			return ExperimentResultData("ml-mbert", retrieved_docs_per_query, 15)
 		
 		elif self.experiment_approach == "ml_knowledge_distillation":
 			retrieved_docs_per_query = retrieve_k_documents_per_query_distiluse(self.preprocessed_data.queries, self.preprocessed_data.docs, 
-                                                                       10, device=self.device)
+                                                                       15, device=self.device)
                   
 			return ExperimentResultData("ml_knowledge_distillation", retrieved_docs_per_query, 15)

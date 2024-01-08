@@ -16,7 +16,7 @@ class Preprocessor:
 
 
 	def get_possible_text_columns(self):
-		possible_columns = []
+		possible_columns = ["text"]
 		for language in self.translation_languages:
 			possible_columns.append(f"text_{language}")
 
@@ -30,13 +30,13 @@ class Preprocessor:
 			preprocessed_queries = self.queries[["query_id", "text"]].copy()
 			preprocessed_docs = self.docs[["doc_id"]].copy()
 			preprocessed_docs["text"] = self.docs.apply(lambda row: row[choice(possible_columns)], axis=1)
-			print(preprocessed_docs)
+			# print(preprocessed_docs)
 
 		elif self.translationHandler.translation_target == "queries":
 			preprocessed_docs = self.docs[["doc_id", "text"]].copy()
 			preprocessed_queries = self.queries[["query_id"]].copy()
 			preprocessed_queries["text"] = self.queries.apply(lambda row: row[choice(possible_columns)], axis=1)
-			print(preprocessed_queries)
+			# print(preprocessed_queries)
 
 		return PreprocessedData(preprocessed_queries, preprocessed_docs)
 	
@@ -71,8 +71,6 @@ class Preprocessor:
 		self.lower_untranslated_text()
 
 		if self.experiment_mode == "monolingual":
-			print(self.queries["query_id"].dtype)
-			print(self.docs["doc_id"].dtype)
 			preprocessed_data = PreprocessedData(self.queries, self.docs)
 
 		elif self.experiment_mode == "multilingual":

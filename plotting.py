@@ -1,10 +1,6 @@
 import matplotlib.pyplot as plt
-
-# Sample data for three models
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import MinMaxScaler
 
 
 def createmultiPlot(model_names, heading, bar_values, bar_labels, is_horizontal):
@@ -21,7 +17,7 @@ def createmultiPlot(model_names, heading, bar_values, bar_labels, is_horizontal)
         plt.barh(ind, bar_values[model_names[1]], height, label=bar_labels[1], color='#7ca655')
 
         plt.barh(ind + height, bar_values[model_names[2]], height, label=bar_labels[2], color='#4495a2')
-
+        
         plt.ylabel('Approaches')
         plt.xlabel('Scores')
         plt.title(heading)
@@ -84,7 +80,7 @@ def creatememPlot(model_names, heading, bar_values, bar_labels, is_horizontal, r
         # plt.barh(ind + height, bar_values[model_names[2]], height, label=bar_labels[2], color='#4495a2')
 
         plt.ylabel('Approaches')
-        plt.xlabel('Scores')
+        plt.xlabel('Runtime in seconds')
         plt.title(heading)
         plt.yticks(ind, model_names)
         plt.xlim(0, range)
@@ -100,7 +96,7 @@ def creatememPlot(model_names, heading, bar_values, bar_labels, is_horizontal, r
         plt.bar(ind, bar_values.iloc[:, 1], width, label=bar_labels[1], color='#7ca655')
 
         plt.xlabel('Approaches')
-        plt.ylabel('Scores')
+        plt.ylabel('Megabytes of Memory')
         plt.title(heading)
         plt.xticks(ind, model_names)
         plt.ylim(0, range)  # Set the y-axis limit for better visualization of scores (0 to 1)
@@ -108,22 +104,23 @@ def creatememPlot(model_names, heading, bar_values, bar_labels, is_horizontal, r
         plt.show()
 
 
-model_names = ['distiluse', 'Mbert', 'minilm']
+model_names = ['distiluse-base', 'mBERT', 'miniLM']
 frame = pd.DataFrame()
-frame["distiluse"] = [0.24883313420947822, 0.2860667349377026, 0.0]
-frame["Mbert"] = [0.14588240314046766, 0.19983785628946912, 0.0]
-frame["minilm"] = [0.5995499123584122, 0.6102597448776406, 0.3076471346168853]
+frame["distiluse"] = [0.2860667349377026, 0.24883313420947822, 0.0]
+#frame["para-mpnet-base"] = [0.40095101710885117, 0.30076493754297134, 0.0]
+frame["Mbert"] = [0.19983785628946912, 0.14588240314046766, 0.0]
+frame["minilm"] = [0.5779824235028752, 0.5405745425357267, 0.2118733102392857]
 print(frame.head())
 frame = frame.T
-frame.columns = ['distiluse', 'Mbert', 'minilm']
-createmultiPlot(model_names, "MAP-Values", frame, ["multilingual", "monolingual", "not_pretranslated"], False)
+frame.columns = ['distiluse-base', 'mBERT', 'miniLM']
+createmultiPlot(model_names, "Mean Average Precision", frame, ["monolingual", "multilingual", "multilingual_not_pretranslated"], False)
 
 runframe = pd.DataFrame()
-runframe["multilingual"] = [15.274346590042114, 136.41511583328247, 64.3079993724823]
-runframe["monolingual"] = [15, 132.62396754, 17.509822130203247]
-creatememPlot(model_names, "Runtime in s", runframe, ["multilingual", "monolingual"], True, 200)
+runframe["multilingual"] = [15.274346590042114, 136.41511583328247, 219.74375534057617]
+runframe["monolingual"] = [14.789234723847, 132.62396754, 17.509822130203247]
+creatememPlot(model_names, "Computation time", runframe, ["multilingual", "monolingual"], True, 250)
 
 mem_frame = pd.DataFrame()
-mem_frame["CPU"] = [2885, 4084, 3089]
+mem_frame["RAM"] = [2885, 4084, 3089]
 mem_frame["CUDA"] = [828, 4394, 1356]
-creatememPlot(model_names, "Memory in MB", mem_frame, ["CPU", "CUDA"], False, 4500)
+creatememPlot(model_names, "Memory Usages (multilingual retrieval)", mem_frame, ["RAM", "CUDA"], False, 4500)

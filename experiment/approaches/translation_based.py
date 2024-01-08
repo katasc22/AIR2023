@@ -10,7 +10,6 @@ from memory_profiler import profile
 def classify_source_lang_and_translate(translationHandler: TranslationHandler, lang_classifier, text):
 	output = lang_classifier(text, top_k=1, truncation=True) 
 	source_lang = output[0]["label"]
-	print(source_lang)
     
 	if source_lang == "en":
 		return text
