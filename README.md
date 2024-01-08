@@ -2,14 +2,14 @@
 ## Experiment AIR23
 ### Different Approaches to Multlingual Retrieval
 Comparing the different approaches for cross-lingual information retrieval.
-### Getting started: 
+## Getting started: 
 pip install --upgrade ir_datasets
 pip install -U sentence-transformers
-### Dataset used
+## Dataset used
 Vaswani
 * Small corpus of roughly 11,000 scientific abstracts
 * English only (translation if necessary done by us)
-### Conclusions
+## Conclusions
 * MiniLM (monolingual approach) has the best overall performance.
 * Translation-based approach also good results but there is longer execution time and more resources needed when comparing MBERT/distiluse with miniLM.
 * MBERT does not produce good sentence embeddings out of the box.
