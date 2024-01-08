@@ -25,6 +25,7 @@ air-experiment.py -h
 * Monolingual model with pretranslated queries has good performance but is bad at scale.
 * Choosing the right model for the respective task significantly impacts retrieval performance
 * mBERT does not produce good sentence embeddings out of the box.
+  
 Best approach:
 * Using fine-tuned multilingual model. It provides the best trade-offs between retrieval performance and computational requirements.
 ## Contributors
